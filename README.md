@@ -1,3 +1,54 @@
+เริ่มต้นด้วย app.js
+
+ใช้ฟังก์ชัน componentDidMount 
+ดึงข้อมูลจาก jsonplaceholder ด้วยคำสั่ง axios.get()
+จากนั้นจะจัดเก็บค่า res.data ที่ได้ลงใน state.todos:[]
+โดยข้อมูลที่ได้มี id,title,completed,
+ส่วน Route จะมี "/about" เพื่อดึงไปหาหน้า About.js
+ส่วน Route จะมี "/" จะมีเรียกใช้ <AddTodo> และ <Todos>
+โดยจะส่งฟังก์ชัน addTodo(title) ไปกับ AddTodo
+และส่งค่า state.todos และ ส่งฟังก์ชัน delTodo(id) 
+ักับ markComplete(id) ไปกับ <Todos>
+
+ใน Todos.js
+้ิเอาค่า Todos มา map มาเป็น todo แล้วส่งค่าไปให้ <TodoItem>
+พร้อมกับ ฟังก์ชัน markComplete และ ฟังก์ชัน delTodo
+
+ใน TodoItem.js 
+เรารับ todo มาใช้ โดยดึงเอามาแต่ id,title,completed
+มี <p> เป็นอันใหญ่ แสดงผล เป็น title
+มี <input> เป็น checkbox เมื่อทำการ change 
+จะเชื่อมกับ markComplete พร้อมส่ง id ไปด้วย
+่ส่วนสถานะ checked ของ <input> จะแสดงผลของ completed
+มี <button> เมื่อทำการ click จะ เชื่อมกับ delTodo 
+พร้อมส่ง id ไปด้วย 
+
+กลับไปที่ app.js
+- ฟังก์ชัน delTodo จะทำการ ส่งค่า id ไปให้ jsonplaceholder
+โดยคำสั่ง axios.delete และจะได้ค่า res กลับมาโดยค่าที่ได้
+คืออันที่เราลบไป โดย filter out อันนี้ออกไปจาก todos:[]
+- ฟังก์ชัน markComplete จะเข้าไปทำการเปลี่ยนค่าใน todos 
+โดยเลือกจาก เอาอันที่ id ตรงกันมากลับ completed ตรงกันข้าม
+แล้วคืน todo กลับไป
+- ส่วน ฟังก์ชัน addTodo ส่งไปพร้อมกับ <AddTodo> 
+
+ใน AddTodo.js
+มี <input> ที่รับค่า title โดยมี value ที่ได้จาก state 
+และ เมื่อ change ก็จะส่งค่ากลับยัง state
+ส่วน <input> เป็นปุ่ม ผูกกับ <form> เมื่อ submit จะทำการ
+เรียกฟังก์ชัน addTodo โดยผูกกับ state.title 
+
+กลับไปยัง app.js
+เมื่อฟังก์ชัน addTodo ถูกใช้งาน จะทำการส่งไปยัง jsonplaceholder
+ด้วยคำสั่ง axios.post พร้อมกับ title และ completed:false
+หลังจากนั้นจะได้ข้อมูลกลับมาคือ res โดย เราขอแก้ res.data.id
+ด้วย uuid เพราะตัวสั่งกลับมาปกติ id มีอันเดียวคือ 101 
+่พอแก้ id เสร็จ ก็เอกค่าไปรวมกับ todos 
+หลังจากนั้น ComponentDidMount ก็จะทำงานตามปกติคือ update
+หน้าจอ
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
