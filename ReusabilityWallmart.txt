@@ -13,7 +13,9 @@ Way of build component must have consistency ......
 
 Meta Team : Is senior representative for discussion & communication
 
+Proposal Process : Use github for each Team to propose to create component
 
+Discovery : Electrode Explore for easy to search of each component , showcase, demos , 
 
 
 Managing Dependency is Hell ( we need to keep up all )
