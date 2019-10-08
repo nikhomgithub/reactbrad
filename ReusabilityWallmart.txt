@@ -1,3 +1,5 @@
 Why we need it
 
-Electrode is open-source of wallmart
+Electrode is open-source framework of wallmart
+
+Managing Dependency is Hell ( we need to keep up all )
