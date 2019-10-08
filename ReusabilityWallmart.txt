@@ -24,6 +24,6 @@ Discovery : Electrode Explore for easy to search of each component , showcase, d
 Every compenent need unit test
 
 CI/CD ( when change component, need automatically update component, run auto test & feedback, before send to 
-meta team ) 
+meta team )   < Check, Check, Check > 
 
 
