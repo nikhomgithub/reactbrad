@@ -1,5 +1,19 @@
 Why we need it
 
-Electrode is open-source framework of wallmart
+Electrode.io is open-source framework of wallmart
+
+Wall Mart use Archetypes = Component Templates which have all dependency , 
+
+people, just select Archetypes only, no nedd to select in depth dependency themself
+
+
+Way of build component must have consistency ......
+- Select Archetype => as base
+- Select CSS file  => to make it look different , even on the same Archetype
+
+Meta Team : Is senior representative for discussion & communication
+
+
+
 
 Managing Dependency is Hell ( we need to keep up all )
