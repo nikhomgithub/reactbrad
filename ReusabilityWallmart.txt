@@ -1,5 +1,9 @@
 Why we need it
 
+Problem:
+- Efficiency
+- Managing Dependency is Hell ( we need to keep up all )
+
 Electrode.io is open-source framework of wallmart
 
 Wall Mart use Archetypes = Component Templates which have all dependency , 
@@ -17,5 +21,9 @@ Proposal Process : Use github for each Team to propose to create component
 
 Discovery : Electrode Explore for easy to search of each component , showcase, demos , 
 
+Every compenent need unit test
 
-Managing Dependency is Hell ( we need to keep up all )
+CI/CD ( when change component, need automatically update component, run auto test & feedback, before send to 
+meta team ) 
+
+
