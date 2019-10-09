@@ -1,0 +1,52 @@
+
+Props Drilling is annoying  &&  redux is too hard
+
+Anser = Context API !!
+
+================================
+/*creates a provider + consumer pair*/
+const {Provider, Consumer} = React.createContext();
+
+/*whatever is passed to value will be available to Consumer*/
+<Provider value={/*some value*/}
+
+<Consumer>
+  {value => /* render somethig based on the context value*/}
+</Consumer>
+================================
+example
+  <App>
+    <Provider> 
+  <Dashboard>          <Component1> 
+  <Siderbar>           <Component2>
+    <Consumer>           <Consumer> 
+                       <Component3>
+                         <Consumer>
+
+class App extends Component {
+  state = {
+    user:{
+      name:'Nikhom P'
+    }
+  }
+
+  render(){
+    return (
+      <Provider value={this.state}>
+        <Dashboard/>
+      </Provider>
+    )
+  }
+}
+
+---------------------
+const Dashboard = () => {
+    //notice that we don't pass any props down here!
+  return <Sidebar/>
+}
+--------------------
+const Sidebar = () => {
+  <Consumer>
+    {value => <h1> {value.user.name}</h1>} {/*will print out Nikhom P*/}
+  </Consumer>
+}
