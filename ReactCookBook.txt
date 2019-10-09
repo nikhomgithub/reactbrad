@@ -50,3 +50,8 @@ const Sidebar = () => {
     {value => <h1> {value.user.name}</h1>} {/*will print out Nikhom P*/}
   </Consumer>
 }
+==========================================
+==========================================
+
+
+
