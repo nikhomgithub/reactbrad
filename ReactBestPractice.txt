@@ -1,0 +1,74 @@
+https://www.youtube.com/watch?v=TQ4wW63eoIY
+
+https://github.com/scbowler/jsla-react
+ 
+File & Folder
+ App
+  App.css
+  App.js
+  App.test.js
+  package.js  {
+                "main":"App.js"          //use this package.js in every folder
+              }
+
+===============================
+Function component is faster, no state required
+
+import React from 'react';
+
+export default ({children,color,onClick, ...rest}) => (          //but not use rest if not neccesary
+  <button onClick = {onClick} className = {`btn ${color}`}>
+    {children}
+  </button>
+);
+
+=================================
+Do not put every data on state becuse when it change it will rerender   //time consume
+just put on property of class in state
+
+state = {
+         message:'Make a guess',
+         //randomNumber:null
+        }
+randomNumber = null;          //this is propoerty of class not state
+
+====================================
+In array dont use index as key , 
+
+render(){
+  const listElements = this.state.listData.map(item,index)=>{
+    return <Item key = {item._id} remove={()=> this.removeItem(index)}    //remove is ok 
+  }
+}
+===================================
+<Form></Form> must be in one comonent,  no need to devide them
+===================================
+return(
+  <div>                              //No need for <div> here              
+    <React.Fragment>
+      <h1>Good Guy</h1>
+      {/* <h2>No coment<h2> */}   //try to avoid put comment in xml
+    </React.Fragment>
+  </div>
+)
+=====================================
+Ust test that provide by npx create-react-app    it is deep test
+
+App.test.js
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from '.';
+
+it('renders without crashing',()=>{
+  const div = document.createElement('div');
+  ReactDOM.render(<App/>,div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+
+$npm run test
+==================================
+
+
+
+
+
