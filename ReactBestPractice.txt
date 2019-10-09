@@ -3,13 +3,22 @@ https://www.youtube.com/watch?v=TQ4wW63eoIY
 https://github.com/scbowler/jsla-react
  
 File & Folder
- App
-  App.css
-  App.js
-  App.test.js
-  package.js  {
-                "main":"App.js"          //use this package.js in every folder
-              }
+src
+ helper
+   util.js
+ assets 
+   img
+     a.jpg 
+   js  
+     b.js
+ components  
+   App
+    App.css
+    App.js
+    App.test.js
+    package.js  {
+                  "main":"App.js"          //use this package.js in every folder
+                }
 
 ===============================
 Function component is faster, no state required
